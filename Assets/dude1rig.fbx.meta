@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 979cd7b6c473cdf4faa3d48b0551488d
+timeCreated: 1454188773
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ankle.L
+    100002: Ankle.R
+    100004: Calf.L
+    100006: Calf.L_end
+    100008: Calf.R
+    100010: Calf.R_end
+    100012: Cube
+    100014: Cube.001
+    100016: Cube.002
+    100018: //RootNode
+    100020: Elbow.L
+    100022: Elbow.L_end
+    100024: Elbow.R
+    100026: Elbow.R_end
+    100028: Foot.L
+    100030: Foot.L_end
+    100032: Foot.R
+    100034: Foot.R_end
+    100036: Hand.L
+    100038: Hand.L_end
+    100040: Hand.R
+    100042: Hand.R_end
+    100044: Head
+    100046: Head_end
+    100048: Knee.L
+    100050: Knee.L_end
+    100052: Knee.R
+    100054: Knee.R_end
+    100056: LowerArm.L
+    100058: LowerArm.R
+    100060: Thigh.L
+    100062: Thigh.R
+    100064: Torso_Rig
+    100066: TorsoLower
+    100068: TorsoUpper
+    100070: UpperArm.L
+    100072: UpperArm.R
+    100074: Wrist.L
+    100076: Wrist.L_end
+    100078: Wrist.R
+    100080: Wrist.R_end
+    400000: Ankle.L
+    400002: Ankle.R
+    400004: Calf.L
+    400006: Calf.L_end
+    400008: Calf.R
+    400010: Calf.R_end
+    400012: Cube
+    400014: Cube.001
+    400016: Cube.002
+    400018: //RootNode
+    400020: Elbow.L
+    400022: Elbow.L_end
+    400024: Elbow.R
+    400026: Elbow.R_end
+    400028: Foot.L
+    400030: Foot.L_end
+    400032: Foot.R
+    400034: Foot.R_end
+    400036: Hand.L
+    400038: Hand.L_end
+    400040: Hand.R
+    400042: Hand.R_end
+    400044: Head
+    400046: Head_end
+    400048: Knee.L
+    400050: Knee.L_end
+    400052: Knee.R
+    400054: Knee.R_end
+    400056: LowerArm.L
+    400058: LowerArm.R
+    400060: Thigh.L
+    400062: Thigh.R
+    400064: Torso_Rig
+    400066: TorsoLower
+    400068: TorsoUpper
+    400070: UpperArm.L
+    400072: UpperArm.R
+    400074: Wrist.L
+    400076: Wrist.L_end
+    400078: Wrist.R
+    400080: Wrist.R_end
+    2300000: Cube.001
+    3300000: Cube.001
+    4300000: Cube.002
+    4300002: Cube
+    4300004: Cube.001
+    7400000: Torso_Rig|Torso_RigAction
+    9500000: //RootNode
+    13700000: Cube
+    13700002: Cube.002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
