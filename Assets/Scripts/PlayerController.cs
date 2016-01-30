@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour {
         {
             case enums.InventorySlot.head: inventory.setHeadSlot(item); break;
             case enums.InventorySlot.leg: inventory.setLegSlot(item); break;
+            case enums.InventorySlot.body: inventory.setBodySlot(item); break;
+            case enums.InventorySlot.arm: inventory.setArmSlot(item); break;
         }
     }
 }

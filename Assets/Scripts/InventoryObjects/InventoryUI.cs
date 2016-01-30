@@ -7,13 +7,22 @@ public class InventoryUI : MonoBehaviour {
     GameObject Player;
 
     public Image HeadImage;
-    public GameObject HeadItem = null;
+    GameObject HeadItem = null;
+
+    public Image BodyImage;
+    GameObject BodyItem = null;
 
     public Image LeftLegImage;
-    public GameObject LeftLegItem = null;
+    GameObject LeftLegItem = null;
 
     public Image RightLegImage;
-    public GameObject RightLegItem = null;
+    GameObject RightLegItem = null;
+
+    public Image LeftArmImage;
+    GameObject LeftArmItem = null;
+
+    public Image RightArmImage;
+    GameObject RightArmItem = null;
 
     // Use this for initialization
     void Start () {
@@ -40,6 +49,24 @@ public class InventoryUI : MonoBehaviour {
     {
         HeadItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
         HeadItem = null;
+    }
+
+    public void setBodySlot(GameObject item)
+    {
+        if (BodyItem != null)
+        {
+            dropBodySlot();
+        }
+
+        BodyItem = item;
+        BodyImage.sprite = BodyItem.GetComponent<InventoryItem>().getImage();
+        BodyItem.SetActive(false);
+    }
+
+    public void dropBodySlot()
+    {
+        BodyItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        BodyItem = null;
     }
 
     public void setLegSlot(GameObject item)
@@ -77,5 +104,42 @@ public class InventoryUI : MonoBehaviour {
     {
         RightLegItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
         RightLegItem = null;
+    }
+
+    public void setArmSlot(GameObject item)
+    {
+        if (LeftArmItem != null && RightArmItem != null)
+        {
+            dropRightArmSlot();
+            RightArmItem = LeftArmItem;
+            RightArmImage.sprite = LeftArmImage.sprite;
+
+            LeftArmItem = item;
+            LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
+            LeftArmItem.SetActive(false);
+        }
+        else if (LeftArmItem == null)
+        {
+            LeftArmItem = item;
+            LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
+            LeftArmItem.SetActive(false);
+        }
+        else if (RightArmItem == null)
+        {
+            RightArmItem = item;
+            RightArmImage.sprite = item.GetComponent<InventoryItem>().getImage();
+            RightArmItem.SetActive(false);
+        }
+    }
+
+    public void dropArmLegSlot()
+    {
+        LeftArmItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        LeftArmItem = null;
+    }
+    public void dropRightArmSlot()
+    {
+        RightArmItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        RightArmItem = null;
     }
 }
