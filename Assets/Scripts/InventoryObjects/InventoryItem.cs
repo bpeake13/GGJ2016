@@ -20,11 +20,6 @@ public class InventoryItem : MonoBehaviour {
 
     public Sprite getImage()
     {
-        if(sprite == null)
-        {
-            Debug.Log("sprite is null");
-        }
-
         return sprite;
     }
 
