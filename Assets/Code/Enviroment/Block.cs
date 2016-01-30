@@ -21,7 +21,18 @@ public class Block
     public int Value
     {
         get { return m_value; }
-        set { m_value = value; }
+        set
+        {
+            m_value = value;
+
+            if (value == 0)
+            {
+                while (m_areas.Count > 0)
+                {
+                    m_areas[0].RemovePoint(this);
+                }
+            }
+        }
     }
 
     public TerrainData Owner
@@ -51,9 +62,15 @@ public class Block
         return m_areaSet.Contains(area);
     }
 
-    public void AddToArea(Area area)
+    public void RegisterToArea(Area area)
     {
         m_areas.Add(area);
         m_areaSet.Add(area);
+    }
+
+    public void UnregisterFromArea(Area area)
+    {
+        m_areas.Remove(area);
+        m_areaSet.Remove(area);
     }
 }

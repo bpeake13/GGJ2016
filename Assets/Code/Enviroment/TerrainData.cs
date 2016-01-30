@@ -97,6 +97,12 @@ public class TerrainData
         m_areas.Add(area);
     }
 
+    public void RemoveArea(Area area)
+    {
+        m_areas.Remove(area);
+        area.ClearArea();
+    }
+
     public int GetAreaCount()
     {
         return m_areas.Count;

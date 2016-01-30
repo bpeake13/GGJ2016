@@ -9,12 +9,15 @@ using Random = UnityEngine.Random;
 public class TerrainGenerator : MonoBehaviour
 {
     [SerializeField, Range(0f, 1f)]
-    private float m_randomFillChance;
+    private float m_randomFillChance = 0.5f;
 
     [SerializeField]
-    private int m_width;
+    private int m_width = 100;
     [SerializeField]
-    private int m_height;
+    private int m_height = 100;
+
+    [SerializeField]
+    private int m_minAreaSize = 10;
 
     public TerrainData Generate()
     {
@@ -30,6 +33,7 @@ public class TerrainGenerator : MonoBehaviour
         _circleCull(data);
         _smoothMap(rng, data);
         _findAreas(data);
+        _removeSmallAreas(data);
 
         return data;
     }
@@ -128,14 +132,16 @@ public class TerrainGenerator : MonoBehaviour
         frontier.Enqueue(start);
 
         Block next;
-        while ((next = frontier.Dequeue()) != null)
+        while (frontier.Count > 0)
         {
+            next = frontier.Dequeue();
+
             for (int x = next.Location.X - 1; x <= next.Location.X + 1; x++)
             {
                 for (int y = next.Location.Y - 1; y <= next.Location.Y + 1; y++)
                 {
                     Block block = data.GetBlock(new Point(x, y));
-                    if (block.Value != 0 && !visited.Contains(block))
+                    if (block != null && block.Value != 0 && !visited.Contains(block))
                     {
                         flooded.AddLast(block);
                         visited.Add(block);
@@ -147,11 +153,24 @@ public class TerrainGenerator : MonoBehaviour
 
         if (flooded.Count > 0)
         {
-            return new Area(flooded.ToArray());
+            return new Section(start.Owner, flooded.ToArray());
         }
         else
         {
             return null;
+        }
+    }
+
+    private void _removeSmallAreas(TerrainData data)
+    {
+        for (int i = 0; i < data.GetAreaCount(); i++)
+        {
+            Area area = data.GetArea(i);
+            if (area.GetPointCount() < m_minAreaSize)
+            {
+                area.Obliterate();
+                i--;
+            }
         }
     }
 }

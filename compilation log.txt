@@ -1,19 +1,19 @@
 ********************************************************************************
-*                    Saturday, January 30, 2016 6:25:08 PM                     *
+*                    Saturday, January 30, 2016 6:36:11 PM                     *
 ********************************************************************************
 smcs.exe version: 1.5.3.0
 Platform: Windows
 Target assembly: Assembly-CSharp.dll
-Project directory: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016
-Unity directory: C:/Program Files/Unity/Editor/Data
+Project directory: D:\Users\Benny\Documents\SynedDocuments\Personal\Projects\GGJ2016
+Unity directory: D:/Program Files/Unity/Editor/Data
 Compiler: Version6Microsoft
 
 - Compilation -----------------------------------------------
 
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/csc.exe
-Arguments: -nostdlib+ -noconfig -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-500fc4b005874014e8d14a5452abdd85
+Process: D:\Users\Benny\Documents\SynedDocuments\Personal\Projects\GGJ2016\Roslyn/csc.exe
+Arguments: -nostdlib+ -noconfig -r:"D:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"D:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"D:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"D:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-fe8f28c10d9db7242880e7175f547919
 Exit code: 0
-Elapsed time: 2.77 sec
+Elapsed time: 2.61 sec
 
 - Compiler output:
 0: Microsoft (R) Visual C# Compiler version 1.0.0.50618
@@ -21,194 +21,19 @@ Elapsed time: 2.77 sec
 
 - Compiler errors:
 0: Assets\Scripts\PlayerController.cs(10,15): warning CS0108: 'PlayerController.rigidbody' hides inherited member 'Component.rigidbody'. Use the new keyword if hiding was intended.
-1: Assets\Code\Enviroment\Area.cs(11,28): warning CS0649: Field 'Area.m_blocksSet' is never assigned to, and will always have its default value null
+1: Assets\Code\Logic\TestGame.cs(8,21): warning CS0649: Field 'TestGame.m_targetTerrain' is never assigned to, and will always have its default value null
 2: Assets\Code\Enviroment\TestTerrain.cs(7,24): warning CS0649: Field 'TestTerrain.m_testBlock' is never assigned to, and will always have its default value null
-3: Assets\Code\Enviroment\TerrainGenerator.cs(15,17): warning CS0649: Field 'TerrainGenerator.m_width' is never assigned to, and will always have its default value 0
-4: Assets\Code\Enviroment\TerrainGenerator.cs(17,17): warning CS0649: Field 'TerrainGenerator.m_height' is never assigned to, and will always have its default value 0
-5: Assets\Code\Enviroment\TerrainGenerator.cs(12,19): warning CS0649: Field 'TerrainGenerator.m_randomFillChance' is never assigned to, and will always have its default value 0
-6: Assets\Code\Logic\TestGame.cs(8,21): warning CS0649: Field 'TestGame.m_targetTerrain' is never assigned to, and will always have its default value null
-7: Assets\Scripts\PlayerController.cs(8,10): warning CS0414: The field 'PlayerController.isDead' is assigned but its value is never used
-8: Assets\Scripts\InventoryObjects\ArmInventoryItem.cs(6,20): warning CS0414: The field 'ArmInventoryItem.armType' is assigned but its value is never used
-9: Assets\Scripts\InventoryObjects\LegInventoryItem.cs(6,20): warning CS0414: The field 'LegInventoryItem.headType' is assigned but its value is never used
-10: Assets\BodyInventoryItem.cs(6,20): warning CS0414: The field 'BodyInventoryItem.bodyType' is assigned but its value is never used
-11: Assets\Scripts\InventoryObjects\HeadInventoryItem.cs(6,20): warning CS0414: The field 'HeadInventoryItem.headType' is assigned but its value is never used
-
-- PDB to MDB conversion --------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/pdb2mdb.exe
-Arguments: Temp\Assembly-CSharp.dll
-Elapsed time: 0.11 sec
-
-- pdb2mdb.exe output:
-
-********************************************************************************
-*                    Saturday, January 30, 2016 6:27:47 PM                     *
-********************************************************************************
-smcs.exe version: 1.5.3.0
-Platform: Windows
-Target assembly: Assembly-CSharp.dll
-Project directory: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016
-Unity directory: C:/Program Files/Unity/Editor/Data
-Compiler: Version6Microsoft
-
-- Compilation -----------------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/csc.exe
-Arguments: -nostdlib+ -noconfig -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-36a49b885d7523d41abe2168b1fb6f4b
-Exit code: 0
-Elapsed time: 2.74 sec
-
-- Compiler output:
-0: Microsoft (R) Visual C# Compiler version 1.0.0.50618
-1: Copyright (C) Microsoft Corporation. All rights reserved.
-
-- Compiler errors:
-0: Assets\Scripts\PlayerController.cs(12,15): warning CS0108: 'PlayerController.rigidbody' hides inherited member 'Component.rigidbody'. Use the new keyword if hiding was intended.
-1: Assets\Code\Enviroment\TerrainGenerator.cs(17,17): warning CS0649: Field 'TerrainGenerator.m_height' is never assigned to, and will always have its default value 0
-2: Assets\Code\Enviroment\TerrainGenerator.cs(15,17): warning CS0649: Field 'TerrainGenerator.m_width' is never assigned to, and will always have its default value 0
-3: Assets\Code\Enviroment\TerrainGenerator.cs(12,19): warning CS0649: Field 'TerrainGenerator.m_randomFillChance' is never assigned to, and will always have its default value 0
-4: Assets\Code\Enviroment\TestTerrain.cs(7,24): warning CS0649: Field 'TestTerrain.m_testBlock' is never assigned to, and will always have its default value null
-5: Assets\Code\Enviroment\Area.cs(11,28): warning CS0649: Field 'Area.m_blocksSet' is never assigned to, and will always have its default value null
-6: Assets\Code\Logic\TestGame.cs(8,21): warning CS0649: Field 'TestGame.m_targetTerrain' is never assigned to, and will always have its default value null
+3: Assets\BodyInventoryItem.cs(6,20): warning CS0414: The field 'BodyInventoryItem.bodyType' is assigned but its value is never used
+4: Assets\Scripts\InventoryObjects\ArmInventoryItem.cs(6,20): warning CS0414: The field 'ArmInventoryItem.armType' is assigned but its value is never used
+5: Assets\Scripts\InventoryObjects\LegInventoryItem.cs(6,20): warning CS0414: The field 'LegInventoryItem.headType' is assigned but its value is never used
+6: Assets\Code\Enviroment\GeneratedTerrain.cs(6,19): warning CS0414: The field 'GeneratedTerrain.m_boxSize' is assigned but its value is never used
 7: Assets\Scripts\InventoryObjects\HeadInventoryItem.cs(6,20): warning CS0414: The field 'HeadInventoryItem.headType' is assigned but its value is never used
-8: Assets\Scripts\InventoryObjects\ArmInventoryItem.cs(6,20): warning CS0414: The field 'ArmInventoryItem.armType' is assigned but its value is never used
-9: Assets\BodyInventoryItem.cs(6,20): warning CS0414: The field 'BodyInventoryItem.bodyType' is assigned but its value is never used
-10: Assets\Scripts\InventoryObjects\LegInventoryItem.cs(6,20): warning CS0414: The field 'LegInventoryItem.headType' is assigned but its value is never used
-11: Assets\Scripts\PlayerController.cs(10,10): warning CS0414: The field 'PlayerController.isDead' is assigned but its value is never used
 
 - PDB to MDB conversion --------------------------------------
 
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/pdb2mdb.exe
+Process: D:\Users\Benny\Documents\SynedDocuments\Personal\Projects\GGJ2016\Roslyn/pdb2mdb.exe
 Arguments: Temp\Assembly-CSharp.dll
 Elapsed time: 0.12 sec
-
-- pdb2mdb.exe output:
-
-********************************************************************************
-*                    Saturday, January 30, 2016 6:32:10 PM                     *
-********************************************************************************
-smcs.exe version: 1.5.3.0
-Platform: Windows
-Target assembly: Assembly-CSharp.dll
-Project directory: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016
-Unity directory: C:/Program Files/Unity/Editor/Data
-Compiler: Version6Microsoft
-
-- Compilation -----------------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/csc.exe
-Arguments: -nostdlib+ -noconfig -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-0b6f2e1c65f1fb94291c027ed29024e4
-Exit code: 0
-Elapsed time: 2.73 sec
-
-- Compiler output:
-0: Microsoft (R) Visual C# Compiler version 1.0.0.50618
-1: Copyright (C) Microsoft Corporation. All rights reserved.
-
-- Compiler errors:
-0: Assets\Scripts\PlayerController.cs(12,15): warning CS0108: 'PlayerController.rigidbody' hides inherited member 'Component.rigidbody'. Use the new keyword if hiding was intended.
-1: Assets\Code\Logic\TestGame.cs(8,21): warning CS0649: Field 'TestGame.m_targetTerrain' is never assigned to, and will always have its default value null
-2: Assets\Code\Enviroment\TerrainGenerator.cs(12,19): warning CS0649: Field 'TerrainGenerator.m_randomFillChance' is never assigned to, and will always have its default value 0
-3: Assets\Code\Enviroment\TestTerrain.cs(7,24): warning CS0649: Field 'TestTerrain.m_testBlock' is never assigned to, and will always have its default value null
-4: Assets\Code\Enviroment\Area.cs(11,28): warning CS0649: Field 'Area.m_blocksSet' is never assigned to, and will always have its default value null
-5: Assets\Code\Enviroment\TerrainGenerator.cs(15,17): warning CS0649: Field 'TerrainGenerator.m_width' is never assigned to, and will always have its default value 0
-6: Assets\Code\Enviroment\TerrainGenerator.cs(17,17): warning CS0649: Field 'TerrainGenerator.m_height' is never assigned to, and will always have its default value 0
-7: Assets\Scripts\InventoryObjects\HeadInventoryItem.cs(6,20): warning CS0414: The field 'HeadInventoryItem.headType' is assigned but its value is never used
-8: Assets\Scripts\InventoryObjects\ArmInventoryItem.cs(6,20): warning CS0414: The field 'ArmInventoryItem.armType' is assigned but its value is never used
-9: Assets\Scripts\PlayerController.cs(10,10): warning CS0414: The field 'PlayerController.isDead' is assigned but its value is never used
-10: Assets\Scripts\InventoryObjects\LegInventoryItem.cs(6,20): warning CS0414: The field 'LegInventoryItem.headType' is assigned but its value is never used
-11: Assets\BodyInventoryItem.cs(6,20): warning CS0414: The field 'BodyInventoryItem.bodyType' is assigned but its value is never used
-
-- PDB to MDB conversion --------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/pdb2mdb.exe
-Arguments: Temp\Assembly-CSharp.dll
-Elapsed time: 0.11 sec
-
-- pdb2mdb.exe output:
-
-********************************************************************************
-*                    Saturday, January 30, 2016 6:34:21 PM                     *
-********************************************************************************
-smcs.exe version: 1.5.3.0
-Platform: Windows
-Target assembly: Assembly-CSharp.dll
-Project directory: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016
-Unity directory: C:/Program Files/Unity/Editor/Data
-Compiler: Version6Microsoft
-
-- Compilation -----------------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/csc.exe
-Arguments: -nostdlib+ -noconfig -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-e70163e032a56f0479685c091616e8a2
-Exit code: 0
-Elapsed time: 2.74 sec
-
-- Compiler output:
-0: Microsoft (R) Visual C# Compiler version 1.0.0.50618
-1: Copyright (C) Microsoft Corporation. All rights reserved.
-
-- Compiler errors:
-0: Assets\Scripts\PlayerController.cs(12,15): warning CS0108: 'PlayerController.rigidbody' hides inherited member 'Component.rigidbody'. Use the new keyword if hiding was intended.
-1: Assets\Code\Enviroment\TerrainGenerator.cs(12,19): warning CS0649: Field 'TerrainGenerator.m_randomFillChance' is never assigned to, and will always have its default value 0
-2: Assets\Code\Enviroment\TerrainGenerator.cs(17,17): warning CS0649: Field 'TerrainGenerator.m_height' is never assigned to, and will always have its default value 0
-3: Assets\Code\Enviroment\TerrainGenerator.cs(15,17): warning CS0649: Field 'TerrainGenerator.m_width' is never assigned to, and will always have its default value 0
-4: Assets\Code\Enviroment\TestTerrain.cs(7,24): warning CS0649: Field 'TestTerrain.m_testBlock' is never assigned to, and will always have its default value null
-5: Assets\Code\Logic\TestGame.cs(8,21): warning CS0649: Field 'TestGame.m_targetTerrain' is never assigned to, and will always have its default value null
-6: Assets\Code\Enviroment\Area.cs(11,28): warning CS0649: Field 'Area.m_blocksSet' is never assigned to, and will always have its default value null
-7: Assets\Scripts\PlayerController.cs(10,10): warning CS0414: The field 'PlayerController.isDead' is assigned but its value is never used
-8: Assets\Scripts\InventoryObjects\ArmInventoryItem.cs(6,20): warning CS0414: The field 'ArmInventoryItem.armType' is assigned but its value is never used
-9: Assets\Scripts\InventoryObjects\LegInventoryItem.cs(6,20): warning CS0414: The field 'LegInventoryItem.headType' is assigned but its value is never used
-10: Assets\Scripts\InventoryObjects\HeadInventoryItem.cs(6,20): warning CS0414: The field 'HeadInventoryItem.headType' is assigned but its value is never used
-11: Assets\BodyInventoryItem.cs(6,20): warning CS0414: The field 'BodyInventoryItem.bodyType' is assigned but its value is never used
-
-- PDB to MDB conversion --------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/pdb2mdb.exe
-Arguments: Temp\Assembly-CSharp.dll
-Elapsed time: 0.10 sec
-
-- pdb2mdb.exe output:
-
-********************************************************************************
-*                    Saturday, January 30, 2016 6:36:29 PM                     *
-********************************************************************************
-smcs.exe version: 1.5.3.0
-Platform: Windows
-Target assembly: Assembly-CSharp.dll
-Project directory: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016
-Unity directory: C:/Program Files/Unity/Editor/Data
-Compiler: Version6Microsoft
-
-- Compilation -----------------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/csc.exe
-Arguments: -nostdlib+ -noconfig -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/mscorlib.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Core.dll" -r:"C:/Program Files/Unity/Editor/Data\Mono/lib/mono/2.0/System.Xml.dll" @Temp/UnityTempFile-f904dbac15a75004d9c89f6738eee9f8
-Exit code: 0
-Elapsed time: 2.72 sec
-
-- Compiler output:
-0: Microsoft (R) Visual C# Compiler version 1.0.0.50618
-1: Copyright (C) Microsoft Corporation. All rights reserved.
-
-- Compiler errors:
-0: Assets\Scripts\PlayerController.cs(12,15): warning CS0108: 'PlayerController.rigidbody' hides inherited member 'Component.rigidbody'. Use the new keyword if hiding was intended.
-1: Assets\Code\Logic\TestGame.cs(8,21): warning CS0649: Field 'TestGame.m_targetTerrain' is never assigned to, and will always have its default value null
-2: Assets\Code\Enviroment\Area.cs(11,28): warning CS0649: Field 'Area.m_blocksSet' is never assigned to, and will always have its default value null
-3: Assets\Code\Enviroment\TerrainGenerator.cs(15,17): warning CS0649: Field 'TerrainGenerator.m_width' is never assigned to, and will always have its default value 0
-4: Assets\Code\Enviroment\TerrainGenerator.cs(17,17): warning CS0649: Field 'TerrainGenerator.m_height' is never assigned to, and will always have its default value 0
-5: Assets\Code\Enviroment\TerrainGenerator.cs(12,19): warning CS0649: Field 'TerrainGenerator.m_randomFillChance' is never assigned to, and will always have its default value 0
-6: Assets\Code\Enviroment\TestTerrain.cs(7,24): warning CS0649: Field 'TestTerrain.m_testBlock' is never assigned to, and will always have its default value null
-7: Assets\Scripts\InventoryObjects\LegInventoryItem.cs(6,20): warning CS0414: The field 'LegInventoryItem.headType' is assigned but its value is never used
-8: Assets\Scripts\InventoryObjects\ArmInventoryItem.cs(6,20): warning CS0414: The field 'ArmInventoryItem.armType' is assigned but its value is never used
-9: Assets\Scripts\InventoryObjects\HeadInventoryItem.cs(6,20): warning CS0414: The field 'HeadInventoryItem.headType' is assigned but its value is never used
-10: Assets\BodyInventoryItem.cs(6,20): warning CS0414: The field 'BodyInventoryItem.bodyType' is assigned but its value is never used
-
-- PDB to MDB conversion --------------------------------------
-
-Process: C:\Users\belmo\OneDrive\Documents\GitHub\GGJ2016\Roslyn/pdb2mdb.exe
-Arguments: Temp\Assembly-CSharp.dll
-Elapsed time: 0.11 sec
 
 - pdb2mdb.exe output:
 
