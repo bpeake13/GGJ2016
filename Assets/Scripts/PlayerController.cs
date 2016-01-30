@@ -3,9 +3,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public float playerVelocity;
+    public GameObject heart;
 
+    public float playerVelocity;
     Vector3 forwardVelocity;
+    public bool isDead;
 
     Rigidbody rigidbody;
     InventoryUI inventory;
@@ -18,6 +20,10 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if( Game.getDeathClock() < 0)
+        {
+
+        }
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -55,5 +61,20 @@ public class PlayerController : MonoBehaviour {
             case enums.InventorySlot.body: inventory.setBodySlot(item); break;
             case enums.InventorySlot.arm: inventory.setArmSlot(item); break;
         }
+    }
+
+    public void makeDead()
+    {
+        isDead = true;
+        gameObject.SetActive(false);
+        heart.SetActive(true);
+
+    }
+    public void makeAlive()
+    {
+        isDead = false;
+        gameObject.SetActive(true);
+        heart.SetActive(false);
+
     }
 }
