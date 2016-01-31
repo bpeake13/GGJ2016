@@ -3,6 +3,8 @@ using System.Collections;
 
 public class enums {
 
+    public enum PlayerStates { player1Alive, player2Alive, bothAlive };
+
     public enum InventorySlot { head, body, leg, arm };
     public enum legType { leg1, leg2, leg3 };
     public enum headType { head1, head2, head3 };

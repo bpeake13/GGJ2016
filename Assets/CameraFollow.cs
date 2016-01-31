@@ -20,4 +20,9 @@ public class CameraFollow : MonoBehaviour {
         Vector3 moveToPoint = new Vector3(objectToFollow.transform.position.x + xOffset, gameObject.transform.position.y, objectToFollow.transform.position.z + zOffset);
         transform.position = Vector3.MoveTowards(gameObject.transform.position, moveToPoint, step);
     }
+
+    public void setCameraFollowObject(GameObject player)
+    {
+        objectToFollow = player;
+    }
 }

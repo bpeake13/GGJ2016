@@ -4,10 +4,12 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public GameObject heart;
+    public GameObject otherPlayer;
+    float followSpeed = 5;
 
     public float playerVelocity;
-    Vector3 forwardVelocity;
     public bool isDead;
+    public bool isFocus;
 
     Rigidbody rigidbody;
     InventoryUI inventory;
@@ -20,11 +22,25 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if( Game.getDeathClock() < 0)
+
+        if (isFocus)
         {
-
+            checkPlayerInput();
         }
+        else
+        {
+            float distance = Vector3.Distance(gameObject.transform.position, otherPlayer.transform.position);
+            if (Mathf.Abs(distance) > 3)
+            {
+                float step = followSpeed * Time.deltaTime;
+                Vector3 moveToPoint = new Vector3(otherPlayer.transform.position.x, gameObject.transform.position.y, otherPlayer.transform.position.z);
+                transform.position = Vector3.MoveTowards(gameObject.transform.position, moveToPoint, step);
+            }
+        }
+    }
 
+    void checkPlayerInput()
+    {
         if (Input.GetKey(KeyCode.W))
         {
             rigidbody.velocity = new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, playerVelocity);
@@ -48,7 +64,7 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, rigidbody.velocity.z );
+            rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, rigidbody.velocity.z);
         }
     }
 
@@ -68,13 +84,13 @@ public class PlayerController : MonoBehaviour {
         isDead = true;
         gameObject.SetActive(false);
         heart.SetActive(true);
-
+        heart.transform.position = gameObject.transform.position;
     }
     public void makeAlive()
     {
         isDead = false;
         gameObject.SetActive(true);
         heart.SetActive(false);
-
+        gameObject.transform.position = heart.transform.position;
     }
 }
