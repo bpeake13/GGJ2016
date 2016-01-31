@@ -42,7 +42,10 @@ public class InventoryItem : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                other.gameObject.GetComponent<PlayerController>().pickupBodyPart(gameObject);
+                if (other.GetComponent<PlayerController>().isFocus)
+                {
+                    other.gameObject.GetComponent<PlayerController>().pickupBodyPart(gameObject);
+                }
             }
         }
     }

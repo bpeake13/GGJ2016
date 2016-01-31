@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour {
 
-    GameObject Player;
+    public GameObject PlayerInFocus;
 
     public Image HeadImage;
     GameObject HeadItem = null;
@@ -26,7 +26,7 @@ public class InventoryUI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Player = GameObject.Find("Player");
+        PlayerInFocus = GameObject.Find("Player1");
     }
 	
 	// Update is called once per frame
@@ -47,7 +47,7 @@ public class InventoryUI : MonoBehaviour {
 
     public void dropHeadSlot()
     {
-        HeadItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        HeadItem.GetComponent<InventoryItem>().droppedBackIntoWorld(PlayerInFocus.transform.position);
         HeadItem = null;
     }
 
@@ -65,7 +65,7 @@ public class InventoryUI : MonoBehaviour {
 
     public void dropBodySlot()
     {
-        BodyItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        BodyItem.GetComponent<InventoryItem>().droppedBackIntoWorld(PlayerInFocus.transform.position);
         BodyItem = null;
     }
 
@@ -97,12 +97,12 @@ public class InventoryUI : MonoBehaviour {
 
     public void dropLeftLegSlot()
     {
-        LeftLegItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        LeftLegItem.GetComponent<InventoryItem>().droppedBackIntoWorld(PlayerInFocus.transform.position);
         LeftLegItem = null;
     }
     public void dropRightLegSlot()
     {
-        RightLegItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        RightLegItem.GetComponent<InventoryItem>().droppedBackIntoWorld(PlayerInFocus.transform.position);
         RightLegItem = null;
     }
 
@@ -132,14 +132,14 @@ public class InventoryUI : MonoBehaviour {
         }
     }
 
-    public void dropArmLegSlot()
+    public void dropLeftArmSlot()
     {
-        LeftArmItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        LeftArmItem.GetComponent<InventoryItem>().droppedBackIntoWorld(PlayerInFocus.transform.position);
         LeftArmItem = null;
     }
     public void dropRightArmSlot()
     {
-        RightArmItem.GetComponent<InventoryItem>().droppedBackIntoWorld(Player.transform.position);
+        RightArmItem.GetComponent<InventoryItem>().droppedBackIntoWorld(PlayerInFocus.transform.position);
         RightArmItem = null;
     }
 }

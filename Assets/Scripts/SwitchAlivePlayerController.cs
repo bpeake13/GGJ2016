@@ -6,6 +6,7 @@ public class SwitchAlivePlayerController : MonoBehaviour {
     public CameraFollow cameraFollow;
     public GameObject player1;
     public GameObject player2;
+    public InventoryUI inventoryUi;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class SwitchAlivePlayerController : MonoBehaviour {
             case enums.PlayerStates.player1Alive:
                 player2.GetComponent<PlayerController>().makeDead();
                 cameraFollow.setCameraFollowObject(player1);
+                inventoryUi.PlayerInFocus = player1;
                 player2.GetComponent<PlayerController>().isFocus = false;
                 player1.GetComponent<PlayerController>().isFocus = true;
                 break;
@@ -35,6 +37,7 @@ public class SwitchAlivePlayerController : MonoBehaviour {
             case enums.PlayerStates.player2Alive:
                 player1.GetComponent<PlayerController>().makeDead();
                 cameraFollow.setCameraFollowObject(player2);
+                inventoryUi.PlayerInFocus = player2;
                 player2.GetComponent<PlayerController>().isFocus = true;
                 player1.GetComponent<PlayerController>().isFocus = false;
                 break;

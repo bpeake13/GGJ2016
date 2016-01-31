@@ -54,7 +54,6 @@ public class GraveInteractions : MonoBehaviour {
     
         int randType = Random.Range((int)0, (int)4);
         int randItem = Random.Range((int)1, (int)3);
-        Debug.Log("item spawned " + pickupNames[randType] + randItem.ToString());
         GameObject instance = Instantiate(Resources.Load(pickupNames[randType] + randItem.ToString(), typeof(GameObject))) as GameObject;
         instance.GetComponent<InventoryItem>().droppedBackIntoWorld(gameObject.transform.position + new Vector3(0,4,0));
 

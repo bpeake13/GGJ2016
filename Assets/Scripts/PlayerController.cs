@@ -5,6 +5,12 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject heart;
     public GameObject otherPlayer;
+    public GameObject emoteBubble;
+
+    public SpriteRenderer emoteContainer;
+    public Sprite happyEmote;
+    public Sprite sadEmote;
+
     float followSpeed = 5;
 
     public float playerVelocity;
@@ -77,6 +83,39 @@ public class PlayerController : MonoBehaviour {
             case enums.InventorySlot.body: inventory.setBodySlot(item); break;
             case enums.InventorySlot.arm: inventory.setArmSlot(item); break;
         }
+    }
+
+    public void turnOnEmoteFromPartner()
+    {
+        if (!isDead)
+        {
+            emoteBubble.SetActive(true);
+            emoteContainer.sprite = happyEmote;
+            StartCoroutine(turnOffEmoteAfterSeconds());
+        }
+    }
+
+    public void turnOnEmote()
+    {
+        emoteBubble.SetActive(true);
+
+        if (otherPlayer.GetComponent<PlayerController>().isDead)
+        {
+            emoteContainer.sprite = sadEmote;
+        }
+        else
+        {
+            emoteContainer.sprite = happyEmote;
+        }
+
+        otherPlayer.GetComponent<PlayerController>().turnOnEmoteFromPartner();
+        StartCoroutine(turnOffEmoteAfterSeconds());
+    }
+
+    IEnumerator turnOffEmoteAfterSeconds()
+    {
+        yield return new WaitForSeconds(3);
+        emoteBubble.SetActive(false);
     }
 
     public void makeDead()
