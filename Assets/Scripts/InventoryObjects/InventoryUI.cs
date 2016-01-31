@@ -26,7 +26,6 @@ public class InventoryUI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        PlayerInFocus = GameObject.Find("Player1");
     }
 	
 	// Update is called once per frame

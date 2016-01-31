@@ -12,4 +12,6 @@ public class enums {
     public enum bodyType { body1, body2, body3 };
 
     public enum WolfAnimations { Wolf_Idle, Wolf_Munch, Wolf_Run };
+    public enum PlayerActionStates { Idle, Run, Walk, StruggleWalk, Cry, Death, DigSearch, Pickup}
+    public enum PlayerAnimations { Torso_Rig_Idle, Torso_Rig_Walk };
 }

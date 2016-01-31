@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject otherPlayer;
     public GameObject emoteBubble;
 
+    playerAnimationController animationController;
+
     public SpriteRenderer emoteContainer;
     public Sprite happyEmote;
     public Sprite sadEmote;
@@ -20,20 +22,69 @@ public class PlayerController : MonoBehaviour {
     Rigidbody rigidbody;
     InventoryUI inventory;
 
+    enums.PlayerActionStates playerState = enums.PlayerActionStates.Walk;
+
 	// Use this for initialization
 	void Start () {
         rigidbody = gameObject.GetComponent<Rigidbody>();
-        inventory = GameObject.Find("InventoryUI").GetComponent<InventoryUI>();
+      //  inventory = GameObject.Find("InventoryUI").GetComponent<InventoryUI>();
+        animationController = gameObject.GetComponent<playerAnimationController>();
     }
-	
+
 	// Update is called once per frame
 	void Update () {
 
+        switch (playerState)
+        {
+            case enums.PlayerActionStates.Idle: IdleUpdate(); break;
+            case enums.PlayerActionStates.Walk: WalkUpdate(); break;
+        }
+    }
+
+    void SwitchState(enums.PlayerActionStates newState)
+    {
+        switch (playerState)
+        {
+            case enums.PlayerActionStates.Idle: IdleExit(); break;
+            case enums.PlayerActionStates.Walk: WalkExit(); break;
+        }
+
+        playerState = newState;
+
+        switch (playerState)
+        {
+            case enums.PlayerActionStates.Idle: IdleEnter(); break;
+            case enums.PlayerActionStates.Walk: WalkEnter(); break;
+        }
+    }
+
+    void IdleEnter()
+    {
+
+    }
+
+    void IdleUpdate()
+    {
+
+    }
+
+    void IdleExit()
+    {
+
+    }
+
+    void WalkEnter()
+    {
+
+    }
+
+    void WalkUpdate()
+    {
         if (isFocus)
         {
             checkPlayerInput();
         }
-        else
+        else        //cpu player follow
         {
             float distance = Vector3.Distance(gameObject.transform.position, otherPlayer.transform.position);
             if (Mathf.Abs(distance) > 3)
@@ -42,7 +93,25 @@ public class PlayerController : MonoBehaviour {
                 Vector3 moveToPoint = new Vector3(otherPlayer.transform.position.x, gameObject.transform.position.y, otherPlayer.transform.position.z);
                 transform.position = Vector3.MoveTowards(gameObject.transform.position, moveToPoint, step);
             }
+
+            if (rigidbody.velocity.x == 0 && rigidbody.velocity.z == 0)
+            {
+                if (animationController.getCurrentAnimation() != enums.PlayerAnimations.Torso_Rig_Idle)
+                {
+                    animationController.SetIdle();
+                }
+            }
+            else if (animationController.getCurrentAnimation() != enums.PlayerAnimations.Torso_Rig_Walk)
+            {
+                animationController.SetWalk();
+            }
+            gameObject.transform.LookAt(new Vector3(otherPlayer.transform.position.x, gameObject.transform.position.y, otherPlayer.transform.position.z));
         }
+    }
+
+    void WalkExit()
+    {
+
     }
 
     void checkPlayerInput()
@@ -71,6 +140,24 @@ public class PlayerController : MonoBehaviour {
         else
         {
             rigidbody.velocity = new Vector3(0, rigidbody.velocity.y, rigidbody.velocity.z);
+        }
+
+
+        if(rigidbody.velocity.x == 0 && rigidbody.velocity.z == 0)
+        {
+            if (animationController.getCurrentAnimation() != enums.PlayerAnimations.Torso_Rig_Idle)
+            {
+                animationController.SetIdle();
+            }
+        }
+        else if (animationController.getCurrentAnimation() != enums.PlayerAnimations.Torso_Rig_Walk)
+        {
+            animationController.SetWalk();
+        }
+
+        if (animationController.getCurrentAnimation() != enums.PlayerAnimations.Torso_Rig_Idle)
+        {
+            gameObject.transform.LookAt(new Vector3(rigidbody.velocity.x * 10, gameObject.transform.position.y, rigidbody.velocity.z * 10));
         }
     }
 
