@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour {
     public GameObject otherPlayer;
     public GameObject emoteBubble;
 
+    public InventoryModelUI playerModel;
+    public InventoryModelUI uiModel;
+
     playerAnimationController animationController;
 
     public SpriteRenderer emoteContainer;
@@ -29,6 +32,7 @@ public class PlayerController : MonoBehaviour {
         rigidbody = gameObject.GetComponent<Rigidbody>();
         inventory = GameObject.Find("InventoryUI").GetComponent<InventoryUI>();
         animationController = gameObject.GetComponent<playerAnimationController>();
+        uiModel = GameObject.Find("UiCamera").GetComponent<InventoryModelUI>();
     }
 
 	// Update is called once per frame
@@ -40,7 +44,6 @@ public class PlayerController : MonoBehaviour {
             case enums.PlayerActionStates.Walk: WalkUpdate(); break;
         }
     }
-
     void SwitchState(enums.PlayerActionStates newState)
     {
         switch (playerState)
@@ -218,5 +221,18 @@ public class PlayerController : MonoBehaviour {
         gameObject.SetActive(true);
         heart.SetActive(false);
         gameObject.transform.position = heart.transform.position;
+        setModelFromUi();
+        uiModel.resetModel();
+    }
+
+    void setModelFromUi()
+    {
+        playerModel.resetModel();
+        playerModel.SetBodyModel(uiModel.bodyItem);
+        playerModel.SetHeadModel(uiModel.headItem);
+        playerModel.SetLeftArmModel(uiModel.leftArmItem);
+        playerModel.SetRightArmModel(uiModel.rightArmItem);
+        playerModel.SetLeftLegModel(uiModel.leftLegItem);
+        playerModel.SetRightLegModel(uiModel.rightLegItem);
     }
 }

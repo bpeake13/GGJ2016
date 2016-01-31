@@ -32,6 +32,13 @@ public class InventoryModelUI : MonoBehaviour {
     GameObject activeLegLeft = null;
     GameObject activeLegRight = null;
 
+    public HeadInventoryItem headItem;
+    public BodyInventoryItem bodyItem;
+    public LegInventoryItem leftLegItem;
+    public LegInventoryItem rightLegItem;
+    public ArmInventoryItem leftArmItem;
+    public ArmInventoryItem rightArmItem;
+
     // Use this for initialization
     void Start () {
 	
@@ -42,8 +49,52 @@ public class InventoryModelUI : MonoBehaviour {
 	
 	}
 
+    public void resetModel()
+    {
+        arm1L.SetActive(false);
+        arm1R.SetActive(false);
+        arm2L.SetActive(false);
+        arm2R.SetActive(false);
+        arm3L.SetActive(false);
+        arm3R.SetActive(false);
+
+        leg1L.SetActive(false);
+        leg1R.SetActive(false);
+        leg2L.SetActive(false);
+        leg2R.SetActive(false);
+        leg3L.SetActive(false);
+        leg3R.SetActive(false);
+
+        head1.SetActive(false);
+        head2.SetActive(false);
+        head3.SetActive(false);
+
+        body1.SetActive(false);
+        body2.SetActive(false);
+        body3.SetActive(false);
+
+        activeHead = null;
+        activeBody = null;
+        activeArmLeft = null;
+        activeArmRight = null;
+        activeLegLeft = null;
+        activeLegRight = null;
+
+        headItem = null;
+        bodyItem = null;
+        leftLegItem = null;
+        rightLegItem = null;
+        leftArmItem = null;
+        rightArmItem = null;
+    }
+
     public void SetHeadModel(HeadInventoryItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
+
         if(activeHead != null)
         {
             activeHead.SetActive(false);
@@ -63,10 +114,15 @@ public class InventoryModelUI : MonoBehaviour {
                 break;
         }
         activeHead.SetActive(true);
+        headItem = item;
     }
 
     public void SetBodyModel(BodyInventoryItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
         if (activeBody != null)
         {
             activeBody.SetActive(false);
@@ -86,10 +142,15 @@ public class InventoryModelUI : MonoBehaviour {
                 break;
         }
         activeBody.SetActive(true);
+        bodyItem = item;
     }
 
     public void SetLeftLegModel(LegInventoryItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
         if (activeLegLeft != null)
         {
             activeLegLeft.SetActive(false);
@@ -109,10 +170,15 @@ public class InventoryModelUI : MonoBehaviour {
                 break;
         }
         activeLegLeft.SetActive(true);
+        leftLegItem = item;
     }
 
     public void SetRightLegModel(LegInventoryItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
         if (activeLegRight != null)
         {
             activeLegRight.SetActive(false);
@@ -132,10 +198,15 @@ public class InventoryModelUI : MonoBehaviour {
                 break;
         }
         activeLegRight.SetActive(true);
+        rightLegItem = item;
     }
 
     public void SetLeftArmModel(ArmInventoryItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
         if (activeArmLeft != null)
         {
             activeArmLeft.SetActive(false);
@@ -155,10 +226,15 @@ public class InventoryModelUI : MonoBehaviour {
                 break;
         }
         activeArmLeft.SetActive(true);
+        leftArmItem = item;
     }
 
     public void SetRightArmModel(ArmInventoryItem item)
     {
+        if (item == null)
+        {
+            return;
+        }
         if (activeArmRight != null)
         {
             activeArmRight.SetActive(false);
@@ -178,5 +254,6 @@ public class InventoryModelUI : MonoBehaviour {
                 break;
         }
         activeArmRight.SetActive(true);
+        rightArmItem = item;
     }
 }
