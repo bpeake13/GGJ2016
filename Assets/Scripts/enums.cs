@@ -10,4 +10,6 @@ public class enums {
     public enum headType { head1, head2, head3 };
     public enum armType { arm1, arm2, arm3 };
     public enum bodyType { body1, body2, body3 };
+
+    public enum WolfAnimations { Wolf_Idle, Wolf_Munch, Wolf_Run };
 }
