@@ -7,22 +7,22 @@ public class InventoryUI : MonoBehaviour {
     public GameObject PlayerInFocus;
     public InventoryModelUI inventoryModelUI;
 
-    public Image HeadImage;
+ //   public Image HeadImage;
     GameObject HeadItem = null;
 
-    public Image BodyImage;
+  //  public Image BodyImage;
     GameObject BodyItem = null;
 
-    public Image LeftLegImage;
+  //  public Image LeftLegImage;
     GameObject LeftLegItem = null;
 
-    public Image RightLegImage;
+  //  public Image RightLegImage;
     GameObject RightLegItem = null;
 
-    public Image LeftArmImage;
+ //   public Image LeftArmImage;
     GameObject LeftArmItem = null;
 
-    public Image RightArmImage;
+  //  public Image RightArmImage;
     GameObject RightArmItem = null;
 
     // Use this for initialization
@@ -41,7 +41,7 @@ public class InventoryUI : MonoBehaviour {
         }
 
         HeadItem = item;
-        HeadImage.sprite = HeadItem.GetComponent<InventoryItem>().getImage();
+    //    HeadImage.sprite = HeadItem.GetComponent<InventoryItem>().getImage();
         HeadItem.SetActive(false);
         inventoryModelUI.SetHeadModel(HeadItem.GetComponent<HeadInventoryItem>());
     }
@@ -60,7 +60,7 @@ public class InventoryUI : MonoBehaviour {
         }
 
         BodyItem = item;
-        BodyImage.sprite = BodyItem.GetComponent<InventoryItem>().getImage();
+   //     BodyImage.sprite = BodyItem.GetComponent<InventoryItem>().getImage();
         BodyItem.SetActive(false);
         inventoryModelUI.SetBodyModel(BodyItem.GetComponent<BodyInventoryItem>());
     }
@@ -77,24 +77,24 @@ public class InventoryUI : MonoBehaviour {
         {
             dropRightLegSlot();
             RightLegItem = LeftLegItem;
-            RightLegImage.sprite = LeftLegImage.sprite;
+   //         RightLegImage.sprite = LeftLegImage.sprite;
 
             LeftLegItem = item;
-            LeftLegImage.sprite = LeftLegItem.GetComponent<InventoryItem>().getImage();
+   //         LeftLegImage.sprite = LeftLegItem.GetComponent<InventoryItem>().getImage();
             LeftLegItem.SetActive(false);
             inventoryModelUI.SetLeftLegModel(item.GetComponent<LegInventoryItem>());
         }
         else if(LeftLegItem == null)
         {
             LeftLegItem = item;
-            LeftLegImage.sprite = LeftLegItem.GetComponent<InventoryItem>().getImage();
+   //         LeftLegImage.sprite = LeftLegItem.GetComponent<InventoryItem>().getImage();
             LeftLegItem.SetActive(false);
             inventoryModelUI.SetLeftLegModel(item.GetComponent<LegInventoryItem>());
         }
         else if (RightLegItem == null)
         {
             RightLegItem = item;
-            RightLegImage.sprite = item.GetComponent<InventoryItem>().getImage();
+   //         RightLegImage.sprite = item.GetComponent<InventoryItem>().getImage();
             RightLegItem.SetActive(false);
             inventoryModelUI.SetRightLegModel(item.GetComponent<LegInventoryItem>());
         }
@@ -117,24 +117,24 @@ public class InventoryUI : MonoBehaviour {
         {
             dropRightArmSlot();
             RightArmItem = LeftArmItem;
-            RightArmImage.sprite = LeftArmImage.sprite;
+   //         RightArmImage.sprite = LeftArmImage.sprite;
 
             LeftArmItem = item;
-            LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
+    //        LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
             LeftArmItem.SetActive(false);
             inventoryModelUI.SetLeftArmModel(item.GetComponent<ArmInventoryItem>());
         }
         else if (LeftArmItem == null)
         {
             LeftArmItem = item;
-            LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
+   //         LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
             LeftArmItem.SetActive(false);
             inventoryModelUI.SetLeftArmModel(item.GetComponent<ArmInventoryItem>());
         }
         else if (RightArmItem == null)
         {
             RightArmItem = item;
-            RightArmImage.sprite = item.GetComponent<InventoryItem>().getImage();
+     //       RightArmImage.sprite = item.GetComponent<InventoryItem>().getImage();
             RightArmItem.SetActive(false);
             inventoryModelUI.SetRightArmModel(item.GetComponent<ArmInventoryItem>());
         }

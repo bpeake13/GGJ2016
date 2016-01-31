@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class Game : MonoBehaviour
 {
-    static float initDeathClockTime = 90;
+    static float initDeathClockTime = 45;
     static enums.PlayerStates playerState = enums.PlayerStates.bothAlive;
     static enums.PlayerStates previousPlayerState = enums.PlayerStates.player2Alive;
 
@@ -19,10 +19,12 @@ public abstract class Game : MonoBehaviour
     private void Update()
     {
         //debug auto progress character kill
+        /*
         if (Input.GetKeyDown(KeyCode.T))
         {
             DeathClock -= initDeathClockTime;
         }
+        */
 
         DeathClock -= Time.deltaTime;
         if (DeathClock <= 0)
