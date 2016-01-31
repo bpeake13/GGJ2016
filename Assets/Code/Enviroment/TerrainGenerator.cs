@@ -206,9 +206,11 @@ public class TerrainGenerator : MonoBehaviour
                 if (rng.NextDouble() < m_chanceToSpawnObject)
                 {
                     iterationsSince = m_minDistanceBetweenObjects;
-                    next.Value = m_objectIds[rng.Next(m_objectIds.Length)];
+                    next.Value = m_objectIds[rng.Next(m_objectIds.Length)] + 1;
                 }
             }
+
+            iterationsSince--;
 
             for (int x = next.Location.X - 1; x <= next.Location.X + 1; x++)
             {
