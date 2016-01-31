@@ -1744,7 +1744,7 @@ Transform:
   m_Children:
   - {fileID: 1727568881}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 12
 --- !u!114 &1012308220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1991,7 +1991,9 @@ MonoBehaviour:
   m_randomFillChance: 0.5
   m_width: 100
   m_height: 100
-  m_minAreaSize: 10
+  m_minDistanceBetweenObjects: 30
+  m_chanceToSpawnObject: 0.2
+  m_objectIds: 
 --- !u!114 &1074271971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2057,7 +2059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78af6422c94445c48982bf6c7a44e50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInFocus: {fileID: 0}
+  PlayerInFocus: {fileID: 312769513}
   HeadImage: {fileID: 2138750828}
   BodyImage: {fileID: 1707544660}
   LeftLegImage: {fileID: 1370282025}
