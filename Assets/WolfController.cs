@@ -33,7 +33,7 @@ public class WolfController : MonoBehaviour {
             Vector3 moveToPoint = new Vector3(currentTarget.x, gameObject.transform.position.y, currentTarget.z);
             transform.position = Vector3.MoveTowards(gameObject.transform.position, moveToPoint, step);
         }
-        gameObject.transform.LookAt(currentTarget);
+        gameObject.transform.LookAt(new Vector3(currentTarget.x, gameObject.transform.position.y, currentTarget.z));
 
         if (Mathf.Abs(distance) < 3)
         {
