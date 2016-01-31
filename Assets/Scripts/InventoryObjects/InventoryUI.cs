@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour {
 
     public GameObject PlayerInFocus;
+    public InventoryModelUI inventoryModelUI;
 
     public Image HeadImage;
     GameObject HeadItem = null;
@@ -42,6 +43,7 @@ public class InventoryUI : MonoBehaviour {
         HeadItem = item;
         HeadImage.sprite = HeadItem.GetComponent<InventoryItem>().getImage();
         HeadItem.SetActive(false);
+        inventoryModelUI.SetHeadModel(HeadItem.GetComponent<HeadInventoryItem>());
     }
 
     public void dropHeadSlot()
@@ -60,6 +62,7 @@ public class InventoryUI : MonoBehaviour {
         BodyItem = item;
         BodyImage.sprite = BodyItem.GetComponent<InventoryItem>().getImage();
         BodyItem.SetActive(false);
+        inventoryModelUI.SetBodyModel(BodyItem.GetComponent<BodyInventoryItem>());
     }
 
     public void dropBodySlot()
@@ -79,18 +82,21 @@ public class InventoryUI : MonoBehaviour {
             LeftLegItem = item;
             LeftLegImage.sprite = LeftLegItem.GetComponent<InventoryItem>().getImage();
             LeftLegItem.SetActive(false);
+            inventoryModelUI.SetLeftLegModel(item.GetComponent<LegInventoryItem>());
         }
         else if(LeftLegItem == null)
         {
             LeftLegItem = item;
             LeftLegImage.sprite = LeftLegItem.GetComponent<InventoryItem>().getImage();
             LeftLegItem.SetActive(false);
+            inventoryModelUI.SetLeftLegModel(item.GetComponent<LegInventoryItem>());
         }
         else if (RightLegItem == null)
         {
             RightLegItem = item;
             RightLegImage.sprite = item.GetComponent<InventoryItem>().getImage();
             RightLegItem.SetActive(false);
+            inventoryModelUI.SetRightLegModel(item.GetComponent<LegInventoryItem>());
         }
     }
 
@@ -116,18 +122,21 @@ public class InventoryUI : MonoBehaviour {
             LeftArmItem = item;
             LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
             LeftArmItem.SetActive(false);
+            inventoryModelUI.SetLeftArmModel(item.GetComponent<ArmInventoryItem>());
         }
         else if (LeftArmItem == null)
         {
             LeftArmItem = item;
             LeftArmImage.sprite = LeftArmItem.GetComponent<InventoryItem>().getImage();
             LeftArmItem.SetActive(false);
+            inventoryModelUI.SetLeftArmModel(item.GetComponent<ArmInventoryItem>());
         }
         else if (RightArmItem == null)
         {
             RightArmItem = item;
             RightArmImage.sprite = item.GetComponent<InventoryItem>().getImage();
             RightArmItem.SetActive(false);
+            inventoryModelUI.SetRightArmModel(item.GetComponent<ArmInventoryItem>());
         }
     }
 

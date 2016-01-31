@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rigidbody = gameObject.GetComponent<Rigidbody>();
-      //  inventory = GameObject.Find("InventoryUI").GetComponent<InventoryUI>();
+        inventory = GameObject.Find("InventoryUI").GetComponent<InventoryUI>();
         animationController = gameObject.GetComponent<playerAnimationController>();
     }
 

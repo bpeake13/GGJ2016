@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 15872aca1ca70c040917f7da924bc9b1, type: 3}
+  legType: 1
 --- !u!114 &11429532
 MonoBehaviour:
   m_ObjectHideFlags: 1

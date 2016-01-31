@@ -25,6 +25,13 @@ public class InventoryModelUI : MonoBehaviour {
     public GameObject body2;
     public GameObject body3;
 
+    GameObject activeHead = null;
+    GameObject activeBody = null;
+    GameObject activeArmLeft = null;
+    GameObject activeArmRight = null;
+    GameObject activeLegLeft = null;
+    GameObject activeLegRight = null;
+
     // Use this for initialization
     void Start () {
 	
@@ -34,4 +41,142 @@ public class InventoryModelUI : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void SetHeadModel(HeadInventoryItem item)
+    {
+        if(activeHead != null)
+        {
+            activeHead.SetActive(false);
+            activeHead = null;
+        }
+
+        switch (item.headType)
+        {
+            case enums.headType.head1:
+                activeHead = head1;
+                break;
+            case enums.headType.head2:
+                activeHead = head2;
+                break;
+            case enums.headType.head3:
+                activeHead = head3;
+                break;
+        }
+        activeHead.SetActive(true);
+    }
+
+    public void SetBodyModel(BodyInventoryItem item)
+    {
+        if (activeBody != null)
+        {
+            activeBody.SetActive(false);
+            activeBody = null;
+        }
+
+        switch (item.bodyType)
+        {
+            case enums.bodyType.body1:
+                activeBody = body1;
+                break;
+            case enums.bodyType.body2:
+                activeBody = body2;
+                break;
+            case enums.bodyType.body3:
+                activeBody = body3;
+                break;
+        }
+        activeBody.SetActive(true);
+    }
+
+    public void SetLeftLegModel(LegInventoryItem item)
+    {
+        if (activeLegLeft != null)
+        {
+            activeLegLeft.SetActive(false);
+            activeLegLeft = null;
+        }
+
+        switch (item.legType)
+        {
+            case enums.legType.leg1:
+                activeLegLeft = leg1L;
+                break;
+            case enums.legType.leg2:
+                activeLegLeft = leg2L;
+                break;
+            case enums.legType.leg3:
+                activeLegLeft = leg3L;
+                break;
+        }
+        activeLegLeft.SetActive(true);
+    }
+
+    public void SetRightLegModel(LegInventoryItem item)
+    {
+        if (activeLegRight != null)
+        {
+            activeLegRight.SetActive(false);
+            activeLegRight = null;
+        }
+
+        switch (item.legType)
+        {
+            case enums.legType.leg1:
+                activeLegRight = leg1R;
+                break;
+            case enums.legType.leg2:
+                activeLegRight = leg2R;
+                break;
+            case enums.legType.leg3:
+                activeLegRight = leg3R;
+                break;
+        }
+        activeLegRight.SetActive(true);
+    }
+
+    public void SetLeftArmModel(ArmInventoryItem item)
+    {
+        if (activeArmLeft != null)
+        {
+            activeArmLeft.SetActive(false);
+            activeArmLeft = null;
+        }
+
+        switch (item.armType)
+        {
+            case enums.armType.arm1:
+                activeArmLeft = arm1L;
+                break;
+            case enums.armType.arm2:
+                activeArmLeft = arm2L;
+                break;
+            case enums.armType.arm3:
+                activeArmLeft = arm3L;
+                break;
+        }
+        activeArmLeft.SetActive(true);
+    }
+
+    public void SetRightArmModel(ArmInventoryItem item)
+    {
+        if (activeArmRight != null)
+        {
+            activeArmRight.SetActive(false);
+            activeArmRight = null;
+        }
+
+        switch (item.armType)
+        {
+            case enums.armType.arm1:
+                activeArmRight =arm1R;
+                break;
+            case enums.armType.arm2:
+                activeArmRight = arm2R;
+                break;
+            case enums.armType.arm3:
+                activeArmRight = arm3R;
+                break;
+        }
+        activeArmRight.SetActive(true);
+    }
 }

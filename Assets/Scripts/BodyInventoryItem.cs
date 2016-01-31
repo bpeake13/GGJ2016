@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BodyInventoryItem : InventoryItem
 {
-    enums.bodyType bodyType = 0;
+    public enums.bodyType bodyType = 0;
 
     // Use this for initialization
     protected override void Start()

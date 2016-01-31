@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 6191c8959274a2b4c8d0e916dc1c0251, type: 3}
+  bodyType: 2
 --- !u!135 &13518852
 SphereCollider:
   m_ObjectHideFlags: 1

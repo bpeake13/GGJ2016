@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ArmInventoryItem : InventoryItem
 {
-    enums.bodyType armType = 0;
+    public enums.armType armType = 0;
 
     // Use this for initialization
     protected override void Start()

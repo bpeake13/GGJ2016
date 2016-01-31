@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LegInventoryItem : InventoryItem
 {
-    enums.headType headType = 0;
+    public enums.legType legType = 0;
 
     // Use this for initialization
     protected override void Start () {

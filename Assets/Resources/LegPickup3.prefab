@@ -30,7 +30,7 @@ GameObject:
   - 23: {fileID: 2332180}
   - 135: {fileID: 13532334}
   - 54: {fileID: 5427804}
-  - 114: {fileID: 11423844}
+  - 114: {fileID: 11442694}
   m_Layer: 0
   m_Name: LegPickup3
   m_TagString: Untagged
@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.91, y: 0.9, z: -14.38}
+  m_LocalPosition: {x: -2.64, y: 0.9, z: -4.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492098}
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &11423844
+--- !u!114 &11442694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -119,10 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 184142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aebeb5d348f1cd74d8e23c598c566729, type: 3}
+  m_Script: {fileID: 11500000, guid: 4417227a6ecaf6e4ba2dd58a96e88837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 6d92b94b76205cf48b959a6efd034c79, type: 3}
+  sprite: {fileID: 21300000, guid: af38dfaa930f14b4b93575805be39daf, type: 3}
+  legType: 2
 --- !u!114 &11446750
 MonoBehaviour:
   m_ObjectHideFlags: 1
