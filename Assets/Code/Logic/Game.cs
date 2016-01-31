@@ -3,7 +3,6 @@ using System.Collections;
 
 public abstract class Game : MonoBehaviour
 {
-
     static float initDeathClockTime = 90;
     static enums.PlayerStates playerState = enums.PlayerStates.bothAlive;
     static enums.PlayerStates previousPlayerState = enums.PlayerStates.player2Alive;
