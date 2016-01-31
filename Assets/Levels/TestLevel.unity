@@ -128,7 +128,9 @@ MonoBehaviour:
   m_randomFillChance: 0.519
   m_width: 200
   m_height: 200
-  m_minAreaSize: 100
+  m_minDistanceBetweenObjects: 30
+  m_chanceToSpawnObject: 0.2
+  m_objectIds: 0100000002000000
 --- !u!4 &493833546
 Transform:
   m_ObjectHideFlags: 0
@@ -254,7 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f50962b7c0819745b41fd8ae7d1ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_testBlock: {fileID: 123640, guid: a381ac22bf49b55478109310cc5aba32, type: 2}
+  m_blocks:
+  - {fileID: 123640, guid: a381ac22bf49b55478109310cc5aba32, type: 2}
+  - {fileID: 123640, guid: a381ac22bf49b55478109310cc5aba32, type: 2}
+  - {fileID: 123640, guid: a381ac22bf49b55478109310cc5aba32, type: 2}
   m_blockSize: 1
 --- !u!4 &1861838236
 Transform:

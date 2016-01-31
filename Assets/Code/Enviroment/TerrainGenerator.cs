@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class TerrainGenerator : MonoBehaviour
 {
     [SerializeField, Range(0f, 1f)]
-    private float m_randomFillChance = 0.5f;
+    private float m_randomFillChance = 0.5f; 
 
     [SerializeField]
     private int m_width = 100;
@@ -17,7 +17,13 @@ public class TerrainGenerator : MonoBehaviour
     private int m_height = 100;
 
     [SerializeField]
-    private int m_minAreaSize = 10;
+    private int m_minDistanceBetweenObjects = 30;
+
+    [SerializeField, Range(0f, 1f)]
+    private float m_chanceToSpawnObject = 0.2f;
+
+    [SerializeField]
+    private int[] m_objectIds = new int[0];
 
     public TerrainData Generate()
     {
@@ -34,6 +40,7 @@ public class TerrainGenerator : MonoBehaviour
         _smoothMap(rng, data);
         _findAreas(data);
         _removeSmallAreas(data);
+        _placeTerrainObjects(data.GetArea(0), rng);
 
         return data;
     }
@@ -163,13 +170,57 @@ public class TerrainGenerator : MonoBehaviour
 
     private void _removeSmallAreas(TerrainData data)
     {
+        Area[] areas = new Area[data.GetAreaCount()];
+
         for (int i = 0; i < data.GetAreaCount(); i++)
         {
-            Area area = data.GetArea(i);
-            if (area.GetPointCount() < m_minAreaSize)
+            areas[i] = data.GetArea(i);
+        }
+
+        IEnumerable<Section> removedSections = areas.OfType<Section>().OrderByDescending(section => section.GetPointCount()).Skip(1);
+        foreach (Section section in removedSections)
+        {
+            section.Obliterate();
+        }
+    }
+
+    private void _placeTerrainObjects(Area area, System.Random rng)
+    {
+        TerrainData data = area.Owner;
+        Block start = area.GetPoint(0);
+
+        HashSet<Block> visited = new HashSet<Block>();
+        Queue<Block> frontier = new Queue<Block>();
+
+        frontier.Enqueue(start);
+
+        int iterationsSince = 0;
+
+        Block next;
+        while (frontier.Count > 0)
+        {
+            next = frontier.Dequeue();
+
+            if (iterationsSince <= 0)
             {
-                area.Obliterate();
-                i--;
+                if (rng.NextDouble() < m_chanceToSpawnObject)
+                {
+                    iterationsSince = m_minDistanceBetweenObjects;
+                    next.Value = m_objectIds[rng.Next(m_objectIds.Length)];
+                }
+            }
+
+            for (int x = next.Location.X - 1; x <= next.Location.X + 1; x++)
+            {
+                for (int y = next.Location.Y - 1; y <= next.Location.Y + 1; y++)
+                {
+                    Block block = data.GetBlock(new Point(x, y));
+                    if (block != null && block.Value != 0 && !visited.Contains(block))
+                    {
+                        visited.Add(block);
+                        frontier.Enqueue(block);
+                    }
+                }
             }
         }
     }
