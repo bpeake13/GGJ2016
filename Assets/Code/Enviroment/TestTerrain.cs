@@ -4,7 +4,7 @@ using System.Collections;
 public class TestTerrain : Terrain
 {
     [SerializeField]
-    private GameObject m_testBlock;
+    private GameObject[] m_blocks = new GameObject[0];
 
     [SerializeField]
     private float m_blockSize = 1.0f;
@@ -23,7 +23,7 @@ public class TestTerrain : Terrain
                     float worldZ = y * m_blockSize + position.z;
                     float worldY = position.y;
 
-                    GameObject newBlock = (GameObject) Instantiate(m_testBlock, new Vector3(worldX, worldY, worldZ),
+                    GameObject newBlock = (GameObject) Instantiate(m_blocks[data.GetData(x, y)], new Vector3(worldX, worldY, worldZ),
                         Quaternion.identity);
                 }
             }
