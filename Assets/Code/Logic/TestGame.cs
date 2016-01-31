@@ -9,9 +9,9 @@ public class TestGame : Game
 
     protected override void OnStartGame()
     {
-       // TerrainGenerator gen = GetComponent<TerrainGenerator>();
-      //  TerrainData data = gen.Generate();
+       TerrainGenerator gen = GetComponent<TerrainGenerator>();
+       TerrainData data = gen.Generate();
 
-    //    m_targetTerrain.Construct(data);
+        m_targetTerrain.Construct(data);
     }
 }
